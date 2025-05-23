@@ -1,8 +1,13 @@
 import random
 import telebot
 from telebot import types
+from dotenv import load_dotenv
+import os
 
-bot = telebot.TeleBot("***REMOVED***")
+load_dotenv()  # Загружает переменные из .env файла
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+bot = telebot.TeleBot(BOT_TOKEN)
 
 game = ["Камень", "Ножницы", "Бумага"]
 
